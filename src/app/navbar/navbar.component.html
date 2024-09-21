@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+        }
+        .navbar-logo {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-item {
+            margin-left: 1rem;
+        }
+        .navbar-item a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+        .navbar-item a:hover {
+            background-color: #575757;
+        }
+        @media (max-width: 768px) {
+            .navbar-menu {
+                flex-direction: column;
+                display: none;
+            }
+            .navbar-menu.active {
+                display: flex;
+            }
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+        }
+        @media (min-width: 769px) {
+            .navbar-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Logo</a>
+        <div class="navbar-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="navbar-menu" id="navbarMenu">
+            <li class="navbar-item"><a href="#home">Home</a></li>
+            <li class="navbar-item"><a href="#about">About</a></li>
+            <li class="navbar-item"><a href="#services">Services</a></li>
+            <li class="navbar-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
