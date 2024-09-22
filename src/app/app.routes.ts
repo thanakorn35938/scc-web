@@ -4,13 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationformComponent } from './reservationform/reservationform.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'reservation', component: ReservationComponent }
+  { path: 'reservation', component: ReservationComponent },
+  { path: 'reservationform', component: ReservationformComponent}
 ];
 
 // Removed redundant export statement
